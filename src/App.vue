@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <router-link to="/">
+      <img alt="Vue logo" src="./assets/logo.png" width="100" height="100">
+    </router-link>
     <router-view/>
   </div>
 </template>
@@ -28,5 +27,11 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+section {
+  padding: 2rem;
+  max-width: 1024px;
+  margin: 0 auto;
 }
 </style>
