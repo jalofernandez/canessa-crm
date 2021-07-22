@@ -37,3 +37,22 @@
 .page-transition-enter {
   transition-delay: 0.5s;
 }
+
+::placeholder {
+  font-style: italic;
+  font-weight: 300;
+}
+.radio input ~ label {
+  background-color: #f3f4f6; /* bg-gray-100 */
+  color: #6b7280; /* bg-gray-500 */
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.radio input:hover ~ label {
+  background-color: #fce7f3; /* bg-pink-100 */
+  color: #f472b6; /* bg-pink-400 */
+}
+.radio input:checked ~ label {
+  background-color: #ec4899; /* bg-pink-500 */
+  color: #fdf2f8; /* bg-pink-50 */
+}
