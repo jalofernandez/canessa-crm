@@ -1,11 +1,27 @@
 <template>
-  <div id="app">
-    <router-link to="/">
-      <img alt="Vue logo" src="./assets/logo.png" width="100" height="100">
-    </router-link>
-    <router-view/>
+  <div id="app" class="min-h-screen grid grid-rows-1">
+    <TheNavbar />
+    <main class="w-full pt-20 text-gray-600 body-font relative">
+      <transition name="page-transition" appear>
+        <router-view/>
+      </transition>
+    </main>
+    <TheFooter />
   </div>
 </template>
+
+<script>
+import TheNavbar from './components/TheNavbar.vue'
+import TheFooter from './components/TheFooter.vue'
+
+export default {
+  components: {
+    TheFooter,
+    TheNavbar
+  }
+}
+</script>
+
 
 <style>
 @import './styles/tailwind.css';
