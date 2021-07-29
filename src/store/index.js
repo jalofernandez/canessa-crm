@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import router from '../router'
 import { db } from '../firebase'
+import { auth } from '../firebase'
 
 Vue.use(Vuex)
 
@@ -31,7 +32,7 @@ export default new Vuex.Store({
     //     }
     //   ]
     // },
-
+    /* -- "Clients" Data -- */
     // all "customers" data
     customers: [],
 
@@ -45,7 +46,11 @@ export default new Vuex.Store({
       guardian: '',
       guardianPhone: 0,
       comment: ''
-    }
+    },
+
+    /* -- "Users" Data -- */
+    user: null,
+    error: null
   },
 
   mutations: {
@@ -62,7 +67,19 @@ export default new Vuex.Store({
     // 5. DELETE a single "customer" (client) data into Firebase´s Firestore DB
     setClientRemoved(state, payload) {
       state.customers = state.customers.filter(client => client.id !== payload)
-    }
+    },
+
+    /* -- "Users" Data -- */
+
+    // a. SET single user data from Firebase´s Auth
+    setUser(state, payload) {
+      state.user = payload
+    },
+
+    // a. SET (catch) Errors from Firebase´s Auth
+    setError(state, payload) {
+      state.error = payload
+    },
   },
 
   actions: {
@@ -167,6 +184,54 @@ export default new Vuex.Store({
           // (option 2) with "dispatch" method but it´s not the perfect way cause need another query to server
           commit('setClientRemoved', deletedClientId)
         })
+    },
+
+    /* -- "Users" Data -- */
+
+    // a. SET new "user" in Firebase´s Auth DB
+    createUser({commit}, userData) {
+      auth.createUserWithEmailAndPassword(userData.email, userData.password) // just only two arguments accepted
+          .then(res => {
+            console.log(`
+              Nuevo usuario: "${res.user.email}"
+              ----- ✨ -----
+            `)
+            console.log(res) // all "user" obj data (res.user...)
+            const userCreated = {
+              email: res.user.email,
+              uid: res.user.uid,
+            }
+            commit('setUser', userCreated)
+            router.push('/')
+          })
+          .catch(err => {
+            console.log(`
+              Error usuario: "${err}"
+              ---- 🔥 ----
+            `)
+            commit('setError', err)
+          })
+    },
+
+    // b. GET exist "user" in Firebase´s Auth DB
+    loginUser({commit}, userData) {
+      auth.signInWithEmailAndPassword(userData.email, userData.password)
+          .then(res => {
+            console.log(res) // all "user" obj data (res.user...)
+            const userLoggedIn = {
+              email: res.user.email,
+              uid: res.user.uid,
+            }
+            commit('setUser', userLoggedIn)
+            router.push('/')
+          })
+          .catch(err => {
+            console.log(`
+              Error usuario: "${err}"
+              ---- 🔥 ----
+            `)
+            commit('setError', err)
+          })
     }
 
   },
