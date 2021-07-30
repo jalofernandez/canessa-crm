@@ -83,10 +83,10 @@ export default new Vuex.Store({
   },
 
   actions: {
-    // 1. GET all "customers" data from Firebase´s Firestore DB
-    getCustomers({commit}) {
+    // 1. GET all "customers" data from Firebase´s Firestore DB by checking "user.email" to search is collection name
+    getCustomers({commit, state}) {
       const customers = []
-      db.collection('customers')
+      db.collection(state.user.email)
         .get() // all Documents of a Firestore DB Collection
         .then(res => {
           res.forEach(document => {
@@ -104,9 +104,9 @@ export default new Vuex.Store({
         })
     },
 
-    // 2. GET single "customer" (client) data from Firebase´s Firestore DB
-    getClient({commit}, clientId) {
-      db.collection('customers')
+    // 2. GET single "customer" (client) data from Firebase´s Firestore DB by checking "user.email" to search is collection name
+    getClient({commit, state}, clientId) {
+      db.collection(state.user.email)
         .doc(clientId) // a specific single Document of a Firestore DB Collection 
         .get()
         .then(document => {
@@ -122,9 +122,9 @@ export default new Vuex.Store({
         })
     },
 
-    // 3. EDIT single "customer" (client) data from Firebase´s Firestore DB
-    editClient({commit}, editedClient) {
-      db.collection('customers')
+    // 3. EDIT single "customer" (client) data from Firebase´s Firestore DB by checking "user.email" to search is collection name
+    editClient({commit, state}, editedClient) {
+      db.collection(state.user.email)
         .doc(editedClient.id) // a specific single Document of a Firestore DB Collection
         .update({
           name: editedClient.name,
@@ -145,9 +145,9 @@ export default new Vuex.Store({
         })
     },
 
-    // 4. ADD new single "customer" (client) data into Firebase´s Firestore DB
-    addClient({commit}, addedClient) {
-      db.collection('customers')
+    // 4. ADD new single "customer" (client) data into Firebase´s Firestore DB by checking "user.email" to search is collection name
+    addClient({commit, state}, addedClient) {
+      db.collection(state.user.email)
         .add({
           name: addedClient.name,
           breed: addedClient.breed,
@@ -168,9 +168,9 @@ export default new Vuex.Store({
         })
     },
 
-    // 5. DELETE a single "customer" (client) data into Firebase´s Firestore DB
-    removeClient({commit, dispatch}, deletedClientId) {
-      db.collection('customers')
+    // 5. DELETE a single "customer" (client) data into Firebase´s Firestore DB by checking "user.email" to search is collection name
+    removeClient({commit, state, dispatch}, deletedClientId) {
+      db.collection(state.user.email)
         .doc(deletedClientId)
         .delete()
         .then(() => {
@@ -192,6 +192,7 @@ export default new Vuex.Store({
     createUser({commit}, userData) {
       auth.createUserWithEmailAndPassword(userData.email, userData.password) // just only two arguments accepted
           .then(res => {
+            // 1. SET "user" info
             console.log(`
               Nuevo usuario: "${res.user.email}"
               ----- ✨ -----
@@ -201,8 +202,25 @@ export default new Vuex.Store({
               email: res.user.email,
               uid: res.user.uid,
             }
-            commit('setUser', userCreated)
-            router.push('/')
+
+            // 2. SET new Firebase´s Firestore DB collection with "user" email (it´s unique as "uid")
+            db.collection(res.user.email)
+              .add({
+                name: 'Sparky',
+                breed: 'Bichón Maltés',
+                mood: 'Simpático',
+                owner: 'Juan Doe Sr.',
+                ownerPhone: '646901234',
+                guardian: 'Juan Doe Jr.',
+                guardianPhone: '',
+                comment: 'Es bueno y sumiso aunque suele venir lleno de nudos.',
+              })
+              // 3. PUSH created user and go to route with all data
+              .then(doc => {
+                commit('setUser', userCreated)
+                router.push('/')
+              })
+              .catch(err => console.log(err))
           })
           .catch(err => {
             console.log(`
