@@ -13,23 +13,23 @@ module.exports = {
   //   ]
   // },
 
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or false
 
   theme: {
     extend: {
-      // fill: (theme) => ({
-      //   yellow: theme('colors.yellow.400'),
-      //   blue: theme('colors.blue.900'),
-      // }),
-      // backgroundColor: (theme) => ({
-      //   light: theme('colors.gray-main.300'), // new color declared just below
-      //   dark: theme('colors.navy.900'),
-      //   dark: theme('colors.navy.700'),
-      // }),
-      // textColor: (theme) => ({
-      //   dark: theme('colors.sky.300'),
-      // }),
-      // backgroundColor: ['active'],
+      fill: (theme) => ({
+        yellow: theme('colors.yellow.400'),
+        blue: theme('colors.blue.900'),
+      }),
+      backgroundColor: (theme) => ({
+        light: theme('colors.gray-main.300'), // new color declared just below
+        dark: theme('colors.navy.900'),
+        dark: theme('colors.navy.700'),
+      }),
+      textColor: (theme) => ({
+        dark: theme('colors.sky.300'),
+      }),
+      backgroundColor: ['active'],
       colors: {
         'gray-main': {
           300: '#EAEDF2',

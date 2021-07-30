@@ -38,6 +38,15 @@
   transition-delay: 0.5s;
 }
 
+html.dark,
+html.light {
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -ms-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
 ::placeholder {
   font-style: italic;
   font-weight: 300;

@@ -50,7 +50,9 @@ export default new Vuex.Store({
 
     /* -- "Users" Data -- */
     user: null,
-    error: null
+    error: null,
+
+    theme: 'light', // color theme by default
   },
 
   mutations: {
@@ -76,10 +78,16 @@ export default new Vuex.Store({
       state.user = payload
     },
 
-    // a. SET (catch) Errors from Firebase´s Auth
+    // b. SET (catch) Errors from Firebase´s Auth
     setError(state, payload) {
       state.error = payload
     },
+
+    // c. SET "settings" as user preferences
+    setTheme(state, payload) {
+      state.theme = payload
+      // localStorage.theme = payload
+    }
   },
 
   actions: {
@@ -267,15 +275,26 @@ export default new Vuex.Store({
     // d. UPDATE "user" info after login to allow his data across platform
     isUserAuth({commit}, userAuth) {
       commit('setUser', userAuth)
-    }
+    },
 
+    // e. UPDATE "settings" as user preferences
+    setTheme({commit}, theme) {
+      commit('setTheme', theme)
+      if (theme === 'light') {
+        document.querySelector('html').classList.remove('dark')
+        document.querySelector('html').classList.add('light')
+        return
+      }
+      document.querySelector('html').classList.remove('light')
+      document.querySelector('html').classList.add('dark')
+    }
   },
 
   /* "getters" props are watchers to allow "state" info across webapp cause use "state" directly is not recommended */
   getters: {
     isUserLoggedIn(state) {
       return !!state.user
-    }
+    },
     /* -- code above is equal than the following one -- */
     // isUserLoggedIn(state) {
     //   if (state.user === null) {

@@ -14,7 +14,7 @@
 import TheNavbar from './components/TheNavbar.vue'
 import TheFooter from './components/TheFooter.vue'
 
-import { mapGetters } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   components: {
@@ -22,7 +22,8 @@ export default {
     TheNavbar
   },
   computed: {
-    ...mapGetters(['isUserLoggedIn'])
+    ...mapGetters(['isUserLoggedIn']),
+    ...mapState(['theme'])
   }
 }
 </script>

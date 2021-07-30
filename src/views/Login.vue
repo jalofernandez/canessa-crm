@@ -18,7 +18,10 @@
       <!-- REGISTER -->
       <transition name="page-transition" appear>
         <form v-if="!isLogin" @submit.prevent="createUser({email: user.email, password: user.pass})" class="w-full h-100 absolute z-0">
-          <TheBrand />
+          <div class="flex justify-between items-center">
+            <TheBrand />
+            <ThemeSwitch />
+          </div>
           <TheTitle title="<b class='font-bold'>Registro</b> de nuevo usuario" />
           <div class="relative mb-4">
             <label for="userName" class="leading-8 text-sm font-medium text-gray-500">
@@ -92,7 +95,10 @@
       <!-- LOGIN -->
       <transition name="page-transition" appear>
         <form v-if="isLogin" @submit.prevent="loginUser({email: user.email, password: user.pass})" class="w-full h-100 absolute z-10">
-          <TheBrand />
+          <div class="flex justify-between items-center">
+            <TheBrand />
+            <ThemeSwitch />
+          </div>
           <TheTitle title="<b class='font-bold'>Entrada</b> al manager de clientes" />
           <div class="relative my-4">
             <label for="userEmail" class="leading-8 text-sm font-medium text-gray-500">
@@ -159,6 +165,7 @@
 <script>
 import TheBrand from '@/components/TheBrand.vue'
 import TheTitle from '@/components/TheTitle.vue'
+import ThemeSwitch from '@/components/ThemeSwitch.vue'
 
 import { mapState, mapActions } from 'vuex'
  
@@ -166,7 +173,8 @@ export default {
   name: 'Login',
   components: {
     TheBrand,
-    TheTitle
+    TheTitle,
+    ThemeSwitch
   },
   data() {
     return {

@@ -11,12 +11,13 @@
           Home
         </router-link>
         <router-link
-        v-if="!isUserLoggedIn"
+          v-if="!isUserLoggedIn"
           to="/login"
           class="mr-5 text-navy-900 hover:text-navy-700 dark:text-sky-100 dark:hover:text-sky-300 font-medium cursor-pointer"
         >
           Login
         </router-link>
+        <ThemeSwitch />
       </nav>
 
       <div class="flex flex-row items-center">
@@ -79,12 +80,16 @@
 
 <script>
 import TheBrand from '@/components/TheBrand.vue'
+import ThemeSwitch from '@/components/ThemeSwitch.vue'
 
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'TheNavbar',
-  components: { TheBrand },
+  components: {
+    TheBrand,
+    ThemeSwitch
+  },
   computed: {
     ...mapGetters(['isUserLoggedIn'])
   },
