@@ -5,19 +5,19 @@
       <input
         v-model.trim="searchQuery"
         type="text"
-        class="bg-gray-100 bg-opacity-50 rounded border-2 border-gray-200 focus:border-pink-500 focus:bg-white focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-800 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
         placeholder="Para buscar o filtrar..."
+        class="rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
       />
       <router-link
         to="/nuevo"
-        class="text-white bg-pink-500 border-0 py-1 px-4 focus:outline-none hover:bg-pink-600 rounded text-md tracking-wide"
+        class="border-0 rounded py-1 px-4 focus:outline-none bg-green-500 hover:bg-green-600 text-white text-md tracking-wide"
       >
         Añadir cliente
       </router-link>
     </div>
 
     <div class="flex flex-col text-center w-full">
-      <TheTitle title="Canessa manager for doggies"/>
+      <TheTitle :title="`Lista de clientes de: <small class='text-brand-300'>${currentUser.email}</small>`"/>
     </div>
 
     <div class="overflow-x-auto">
@@ -154,7 +154,8 @@ export default {
   },
   data() {
     return {
-      searchQuery: ''
+      searchQuery: '',
+      currentUser: this.$store.state.user
     }
   },
   created() {

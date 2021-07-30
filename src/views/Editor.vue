@@ -3,7 +3,7 @@
   <section class="container px-5 pt-5 pb-24 mx-auto">
 
     <div class="flex flex-col text-center w-full">
-      <TheTitle :title="`Editar cliente: <small class='text-pink-300'>${client.name}</small>`"/>
+      <TheTitle :title="`Editar cliente: <small class='text-brand-300'>${client.name}</small>`"/>
     </div>
 
     <!-- <div class="flex flex-col text-center w-full">
@@ -27,7 +27,7 @@
               id="clientName"
               name="clientName"
               placeholder="E.j. Sparky"
-              class="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-gray-200 focus:border-pink-500 focus:bg-white focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-800 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
             >
           </div>
         </div>
@@ -44,7 +44,7 @@
               id="clientBreed"
               name="clientBreed"
               placeholder="E.j. Mestizo pastór alemán chihuahua"
-              class="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-gray-200 focus:border-pink-500 focus:bg-white focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-800 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
             >
           </div>
         </div>
@@ -130,7 +130,7 @@
               id="clientOwner"
               name="clientOwner"
               placeholder="E.j. Pepi"
-              class="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-gray-200 focus:border-pink-500 focus:bg-white focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-800 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
             >
           </div>
         </div>
@@ -147,7 +147,7 @@
               id="ownerPhone"
               name="ownerPhone"
               placeholder="E.j. 666111666"
-              class="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-gray-200 focus:border-pink-500 focus:bg-white focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-800 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
             >
             <!-- <small id="ownerPhoneError" class="">
               That´s a f***ckin´numbah, folk!
@@ -167,7 +167,7 @@
               id="guardianName"
               name="guardianName"
               placeholder="E.j. Susana hija de Pepi"
-              class="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-gray-200 focus:border-pink-500 focus:bg-white focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-800 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
             >
           </div>
         </div>
@@ -184,7 +184,7 @@
               id="guardianPhone"
               name="guardianPhone"
               placeholder="E.j. 666232323"
-              class="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-gray-200 focus:border-pink-500 focus:bg-white focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-800 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
             >
             <!-- <small id="guardianPhoneError" class="">
               That´s another cell´numbah, dude!
@@ -203,7 +203,7 @@
               type="text"
               aria-describedby="emailHelp"
               placeholder="E.j. Corte a tijera 3mm. Llora muchísimo."
-              class="w-full bg-gray-100 bg-opacity-50 rounded border-2 border-gray-200 focus:border-pink-500 focus:bg-white focus:ring-2 focus:ring-pink-200 h-32 text-base outline-none text-gray-800 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+              class="w-full h-32 rounded outline-none border-2 border-gray-200 focus:border-brand-500 py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-pink-200 bg-opacity-50 text-base text-gray-800 leading-6 transition-colors duration-200 ease-in-out resize-none"
             ></textarea>
           </div>
         </div>

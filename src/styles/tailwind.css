@@ -49,10 +49,10 @@
   transition: all 0.15s ease;
 }
 .radio input:hover ~ label {
-  background-color: #fce7f3; /* bg-pink-100 */
-  color: #f472b6; /* bg-pink-400 */
+  background-color: #ffd2b7; /* bg-brand-100 */
+  color: #d2560d; /* bg-brand-600 */
 }
 .radio input:checked ~ label {
-  background-color: #ec4899; /* bg-pink-500 */
-  color: #fdf2f8; /* bg-pink-50 */
+  background-color: #f06311; /* bg-brand-500 */
+  color: #fffcfb; /* bg-brand-50 */
 }
