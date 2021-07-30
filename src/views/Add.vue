@@ -47,7 +47,7 @@
           <h5 class="leading-8 text-sm font-medium text-gray-400">
             Carácter del perrete: <em class="font-light">{{ client.mood }}</em>
           </h5>
-          <div class="grid grid-cols-2 md:grid-cols-6 xl:grid-cols-12 gap-4 md:gap-2 w-full">
+          <div class="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-2 w-full">
 
             <div class="inline-block radio">
               <input v-model="client.mood" type="radio" name="radioOptions" id="radio1" value="muerde" hidden="hidden">
