@@ -232,6 +232,18 @@ export default new Vuex.Store({
             `)
             commit('setError', err)
           })
+    },
+
+    // c. CLOSE "user" session in store
+    logoutUser({commit}) {
+      auth.signOut()
+          .then(() => {
+            console.log(`
+              User signOut
+              --- 🚪🏃 ---
+            `)
+            router.push('/login')
+          })
     }
 
   },

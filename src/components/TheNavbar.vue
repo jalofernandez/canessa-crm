@@ -53,7 +53,7 @@
             </svg>
           </button> -->
           <button
-            @click="logout()"
+            @click="logoutUser()"
             type="button"
             class="inline-flex items-center bg-red-100 hover:bg-red-200 border-0 py-0.5 px-2 focus:outline-none rounded text-xs text-red-500 hover:text-red-600 mt-4 md:mt-0"
           >
@@ -79,13 +79,13 @@
 <script>
 import TheBrand from '@/components/TheBrand.vue'
 
+import { mapActions } from 'vuex'
+
 export default {
   name: 'TheNavbar',
   components: { TheBrand },
   methods: {
-    logout() {
-      alert('Add logic here to logout user session :)')
-    }
+    ...mapActions(['logoutUser'])
   }
 }
 </script>
