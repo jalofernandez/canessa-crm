@@ -244,8 +244,28 @@ export default new Vuex.Store({
             `)
             router.push('/login')
           })
+    },
+
+    // d. UPDATE "user" info after login to allow his data across platform
+    isUserAuth({commit}, userAuth) {
+      commit('setUser', userAuth)
     }
 
+  },
+
+  /* "getters" props are watchers to allow "state" info across webapp cause use "state" directly is not recommended */
+  getters: {
+    isUserLoggedIn(state) {
+      return !!state.user
+    }
+    /* -- code above is equal than the following one -- */
+    // isUserLoggedIn(state) {
+    //   if (state.user === null) {
+    //     return false
+    //   } else {
+    //     return true
+    //   }
+    // }
   },
 
   modules: {

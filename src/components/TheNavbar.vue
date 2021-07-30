@@ -11,6 +11,7 @@
           Home
         </router-link>
         <router-link
+        v-if="!isUserLoggedIn"
           to="/login"
           class="mr-5 text-navy-900 hover:text-navy-700 dark:text-sky-100 dark:hover:text-sky-300 font-medium cursor-pointer"
         >
@@ -79,11 +80,14 @@
 <script>
 import TheBrand from '@/components/TheBrand.vue'
 
-import { mapActions } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   name: 'TheNavbar',
   components: { TheBrand },
+  computed: {
+    ...mapGetters(['isUserLoggedIn'])
+  },
   methods: {
     ...mapActions(['logoutUser'])
   }

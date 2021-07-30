@@ -1,12 +1,12 @@
 <template>
   <div id="app" class="min-h-screen grid grid-rows-1">
-    <TheNavbar />
-    <main class="w-full pt-20 text-gray-600 body-font relative">
+    <TheNavbar v-if="isUserLoggedIn" />
+    <main :class="['w-full', 'text-gray-600', 'body-font', 'relative', { 'pt-20' : isUserLoggedIn}]">
       <transition name="page-transition" appear>
         <router-view/>
       </transition>
     </main>
-    <TheFooter />
+    <TheFooter v-if="isUserLoggedIn" />
   </div>
 </template>
 
@@ -14,10 +14,15 @@
 import TheNavbar from './components/TheNavbar.vue'
 import TheFooter from './components/TheFooter.vue'
 
+import { mapGetters } from 'vuex'
+
 export default {
   components: {
     TheFooter,
     TheNavbar
+  },
+  computed: {
+    ...mapGetters(['isUserLoggedIn'])
   }
 }
 </script>
