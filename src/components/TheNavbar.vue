@@ -34,26 +34,6 @@
               {{ $nuxt.$fire.auth.currentUser.email }}
             </span>
           </NuxtLink> -->
-
-          <!-- <button
-            v-if="isUserLog"
-            type="button"
-            class="inline-flex items-center bg-red-100 hover:bg-red-200 border-0 py-0.5 px-2 focus:outline-none rounded text-xs text-red-500 hover:text-red-600 mt-4 md:mt-0"
-            @click="logout()"
-          >
-            Logout
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              class="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button> -->
           <button
             @click="logoutUser()"
             type="button"
