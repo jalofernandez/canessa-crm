@@ -1,7 +1,7 @@
 <template>
   <router-link to="/" class="special-link anim-appear flex title-font font-medium items-center">
     <img alt="Vue logo" src="../assets/logos/petsmanager--logotype.svg" width="50" height="50">
-    <span class="ml-2 text-xl font-light text-brand-500 hover:text-brand-300 dark:text-sky-100 dark:hover:text-sky-300">
+    <span class="ml-2 text-xl font-light text-brand-500 hover:text-brand-300">
       <span class="font-bold">Pets</span>Manager
     </span>
   </router-link>

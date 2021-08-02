@@ -1,7 +1,7 @@
 <template>
-  <div id="app" class="min-h-screen grid grid-rows-1">
+  <div id="app" class="min-h-screen grid grid-rows-1 bg-white dark:bg-black">
     <TheNavbar v-if="isUserLoggedIn" />
-    <main :class="['w-full', 'text-gray-600', 'body-font', 'relative', { 'pt-20' : isUserLoggedIn}]">
+    <main :class="['w-full', 'text-gray-600', 'body-font', 'relative', 'bg-white', 'dark:bg-navy-900', { 'pt-20' : isUserLoggedIn}]">
       <transition name="page-transition" appear>
         <router-view/>
       </transition>

@@ -6,7 +6,7 @@
         v-model.trim="searchQuery"
         type="text"
         placeholder="Para buscar o filtrar..."
-        class="rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
+        class="rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
       />
       <router-link
         to="/nuevo"

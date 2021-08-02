@@ -24,7 +24,7 @@
           </div>
           <TheTitle title="<b class='font-bold'>Registro</b> de nuevo usuario" />
           <div class="relative mb-4">
-            <label for="userName" class="leading-8 text-sm font-medium text-gray-500">
+            <label for="userName" class="leading-8 text-sm font-medium text-gray-500 dark:text-sky-300 tracking-wide">
               Nombre usuario
             </label>
             <input
@@ -33,11 +33,11 @@
               id="userName"
               name="userName"
               placeholder="E.j. Rick un palmo"
-              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
           </div>
           <div class="relative mb-4">
-            <label for="userEmail" class="leading-8 text-sm font-medium text-gray-500">
+            <label for="userEmail" class="leading-8 text-sm font-medium text-gray-500 dark:text-sky-300 tracking-wide">
               Email de usuario *
             </label>
             <input
@@ -46,11 +46,12 @@
               id="userEmail"
               name="userEmail"
               placeholder="E.j. rickunpalmo@gmail.com"
-              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
           </div>
           <div class="relative mb-4">
-            <label for="userPass" class="leading-8 text-sm font-medium text-gray-500">
+            <label for="userPass" class="leading-8 text-sm font-medium text-gray-500 dark:text-sky-300 tracking-wide">
+              
               Contraseña | Password *
             </label>
             <input
@@ -59,7 +60,7 @@
               id="userPass"
               name="userPass"
               placeholder="E.j. huyK3Chung@!"
-              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
           </div>
           <div class="relative mt-8">
@@ -67,7 +68,7 @@
             <p v-if="error" class="mb-8 text-red-500 font-semibold">
               {{ error.message }}
             </p>
-            <p class="text-xs font-light text-gray-500 mb-8">
+            <p class="mb-8 text-xs font-light text-gray-500 dark:text-sky-300">
               * <em>Tienes que rellenar estos campos obligatoriamente o sino de entrar a la plataforma "nanai de la chaina" (vamos, que el botón permanecerá bloqueado).</em>
             </p>
             <button
@@ -91,7 +92,7 @@
           </div>
         </form>
       </transition>
-      
+
       <!-- LOGIN -->
       <transition name="page-transition" appear>
         <form v-if="isLogin" @submit.prevent="loginUser({email: user.email, password: user.pass})" class="w-full h-100 absolute z-10">
@@ -101,7 +102,7 @@
           </div>
           <TheTitle title="<b class='font-bold'>Entrada</b> al manager de clientes" />
           <div class="relative my-4">
-            <label for="userEmail" class="leading-8 text-sm font-medium text-gray-500">
+            <label for="userEmail" class="leading-8 text-sm font-medium text-gray-500 dark:text-sky-300 tracking-wide">
               Email de usuario *
             </label>
             <input
@@ -110,11 +111,11 @@
               id="userEmail"
               name="userEmail"
               placeholder="E.j. rickunpalmo@gmail.com"
-              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
           </div>
           <div class="relative my-4">
-            <label for="userPass" class="leading-8 text-sm font-medium text-gray-500">
+            <label for="userPass" class="leading-8 text-sm font-medium text-gray-500 dark:text-sky-300 tracking-wide">
               Contraseña | Password *
             </label>
             <input
@@ -123,7 +124,7 @@
               id="userPass"
               name="userPass"
               placeholder="E.j. huyK3Chung@!"
-              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 dark:bg-navy-700 dark:focus:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
           </div>
           <div class="relative mt-8">
@@ -131,7 +132,7 @@
             <p v-if="error" class="mb-8 text-red-500 font-semibold">
               {{ error.message }}
             </p>
-            <p class="text-xs font-light text-gray-500 mb-8">
+            <p class="mb-8 text-xs font-light text-gray-500 dark:text-sky-300">
               * <em>Hay que rellenar estos campos obligatoriamente con un usuario existente o sino de entrar a la plataforma "nanai de la chaina" (vamos, que el botón permanecerá bloqueado).</em>
             </p>
             <button

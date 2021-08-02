@@ -51,17 +51,31 @@ html.light {
   font-style: italic;
   font-weight: 300;
 }
+
 .radio input ~ label {
-  background-color: #f3f4f6; /* bg-gray-100 */
-  color: #6b7280; /* bg-gray-500 */
   cursor: pointer;
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  -ms-transition: all 0.15s ease;
+  -o-transition: all 0.15s ease;
   transition: all 0.15s ease;
 }
-.radio input:hover ~ label {
+
+html.light .radio input ~ label {
+  background-color: #f3f4f6; /* bg-gray-100 */
+  color: #6b7280; /* bg-gray-500 */
+}
+html.dark .radio input ~ label {
+  background-color: #22567b; /* bg-navy-500 */
+  color: #fffcfb; /* bg-brand-50 */
+}
+html.light .radio input:hover ~ label,
+html.dark .radio input:hover ~ label {
   background-color: #ffd2b7; /* bg-brand-100 */
   color: #d2560d; /* bg-brand-600 */
 }
-.radio input:checked ~ label {
+html.light .radio input:checked ~ label,
+html.dark .radio input:checked ~ label {
   background-color: #f06311; /* bg-brand-500 */
   color: #fffcfb; /* bg-brand-50 */
 }

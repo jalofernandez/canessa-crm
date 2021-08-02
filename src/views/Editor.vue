@@ -18,7 +18,7 @@
         <div class="p-3 sm:p-4 w-full sm:w-1/2">
           <div class="relative">
             <!-- "NAME" input -->
-            <label for="clientName" class="leading-8 text-sm font-medium text-gray-400">
+            <label for="clientName" class="leading-8 text-sm font-medium text-gray-400 dark:text-sky-300 tracking-wide">
               Nombre del perrete: <em class="font-light">{{ client.name }}</em>
             </label>
             <input
@@ -27,7 +27,7 @@
               id="clientName"
               name="clientName"
               placeholder="E.j. Sparky"
-              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
           </div>
         </div>
@@ -35,7 +35,7 @@
         <div class="p-3 sm:p-4 w-full sm:w-1/2">
           <div class="relative">
             <!-- "BREED" input -->
-            <label for="clientBreed" class="leading-8 text-sm font-medium text-gray-400">
+            <label for="clientBreed" class="leading-8 text-sm font-medium text-gray-400 dark:text-sky-300 tracking-wide">
               Raza del perrete: <em class="font-light">{{ client.breed }}</em>
             </label>
             <input
@@ -44,14 +44,14 @@
               id="clientBreed"
               name="clientBreed"
               placeholder="E.j. Mestizo pastór alemán chihuahua"
-              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
           </div>
         </div>
 
         <div class="p-3 sm:p-4 w-full">
           <!-- "MOOD" Radio btns -->
-          <h5 class="leading-8 text-sm font-medium text-gray-400">
+          <h5 class="leading-8 text-sm font-medium text-gray-400 dark:text-sky-300 tracking-wide">
             Carácter del perrete: <em class="font-light">{{ client.mood }}</em>
           </h5>
           <div class="grid grid-cols-2 md:grid-cols-6 gap-4 md:gap-2 w-full">
@@ -121,7 +121,7 @@
         <div class="p-3 sm:p-4 w-full sm:w-1/2">
           <div class="relative">
             <!-- "OWNER" input -->
-            <label for="clientOwner" class="leading-8 text-sm font-medium text-gray-400">
+            <label for="clientOwner" class="leading-8 text-sm font-medium text-gray-400 dark:text-sky-300 tracking-wide">
               Nombre del dueño: <em class="font-light">{{ client.owner }}</em>
             </label>
             <input
@@ -130,7 +130,7 @@
               id="clientOwner"
               name="clientOwner"
               placeholder="E.j. Pepi"
-              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
           </div>
         </div>
@@ -138,7 +138,7 @@
         <div class="p-3 sm:p-4 w-full sm:w-1/2">
           <div class="relative">
             <!-- "BREED" input -->
-            <label for="ownerPhone" class="leading-8 text-sm font-medium text-gray-400">
+            <label for="ownerPhone" class="leading-8 text-sm font-medium text-gray-400 dark:text-sky-300 tracking-wide">
               Teléfono del dueño: <em class="font-light">{{ client.ownerPhone }}</em>
             </label>
             <input
@@ -147,7 +147,7 @@
               id="ownerPhone"
               name="ownerPhone"
               placeholder="E.j. 666111666"
-              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
             <!-- <small id="ownerPhoneError" class="">
               That´s a f***ckin´numbah, folk!
@@ -158,7 +158,7 @@
         <div class="p-3 sm:p-4 w-full sm:w-1/2">
           <div class="relative">
             <!-- "GUARDIAN" input -->
-            <label for="guardianName" class="leading-8 text-sm font-medium text-gray-400">
+            <label for="guardianName" class="leading-8 text-sm font-medium text-gray-400 dark:text-sky-300 tracking-wide">
               Nombre del responsable: <em class="font-light">{{ client.guardian }}</em>
             </label>
             <input
@@ -167,7 +167,7 @@
               id="guardianName"
               name="guardianName"
               placeholder="E.j. Susana hija de Pepi"
-              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
           </div>
         </div>
@@ -175,7 +175,7 @@
         <div class="p-3 sm:p-4 w-full sm:w-1/2">
           <div class="relative">
             <!-- "GUARDIAN PHONE" input -->
-            <label for="guardianPhone" class="leading-8 text-sm font-medium text-gray-400">
+            <label for="guardianPhone" class="leading-8 text-sm font-medium text-gray-400 dark:text-sky-300 tracking-wide">
               Teléfono del responsable: <em class="font-light">{{ client.guardianPhone }}</em>
             </label>
             <input
@@ -184,7 +184,7 @@
               id="guardianPhone"
               name="guardianPhone"
               placeholder="E.j. 666232323"
-              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 bg-opacity-50 text-base text-gray-800 leading-8 transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
             <!-- <small id="guardianPhoneError" class="">
               That´s another cell´numbah, dude!
@@ -194,7 +194,7 @@
 
         <div class="p-3 sm:p-4 w-full">
           <div class="relative">
-            <label for="someComment" class="leading-8 text-sm font-medium text-gray-400">
+            <label for="someComment" class="leading-8 text-sm font-medium text-gray-400 dark:text-sky-300 tracking-wide">
               Comentarios adicionales:
             </label>
             <textarea
@@ -203,14 +203,17 @@
               type="text"
               aria-describedby="emailHelp"
               placeholder="E.j. Corte a tijera 3mm. Llora muchísimo."
-              class="w-full h-32 rounded outline-none border-2 border-gray-200 focus:border-brand-500 py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-pink-200 bg-opacity-50 text-base text-gray-800 leading-6 transition-colors duration-200 ease-in-out resize-none"
+              class="w-full h-32 rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-6 tracking-wide transition-colors duration-200 ease-in-out resize-none"
             ></textarea>
           </div>
         </div>
 
         <!-- Submit btn -->
         <div class="p-3 w-full">
-          <button type="submit" class="flex mx-auto text-white bg-pink-500 border-0 py-2 px-8 focus:outline-none hover:bg-pink-600 rounded text-lg tracking-wide">
+          <button
+            type="submit"
+            class="flex mx-auto border-0 rounded py-2 px-8 bg-brand-500 focus:outline-none hover:bg-brand-600 text-white text-lg tracking-wide"
+          >
             Guardar cambios
           </button>
         </div>
