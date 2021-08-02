@@ -17,7 +17,9 @@
     </div>
 
     <div class="flex flex-col text-center w-full">
-      <TheTitle :title="`Lista de clientes de: <small class='text-brand-300'>${currentUser.email}</small>`"/>
+      <TheTitle
+        :title="`Lista de clientes de: <small v-if='currentUser.email !== null' class='text-brand-300'>${currentUser.email}</small>`"
+      />
     </div>
 
     <div class="overflow-x-auto">
