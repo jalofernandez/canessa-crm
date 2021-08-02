@@ -3,7 +3,7 @@
 
     <div class="flex flex-col text-center w-full">
       <TheTitle title="Añadir nuevo cliente"/>
-    </div
+    </div>
 
     <form @submit.prevent="addClient(client)" class="lg:w-3/4 md:w-full mx-auto pt-3">
       <div class="flex flex-wrap -m-2">
