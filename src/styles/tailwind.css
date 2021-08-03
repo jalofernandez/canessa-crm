@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* another way to set "Tailwindcss"
+/* another way to set "Tailwindcss" but in main.js file
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
