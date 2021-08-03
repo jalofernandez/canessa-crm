@@ -53,6 +53,8 @@ export default new Vuex.Store({
     error: null,
 
     theme: 'light', // color theme by default
+
+    loader: false, // page or sections loader spinner whatever
   },
 
   mutations: {
@@ -87,12 +89,17 @@ export default new Vuex.Store({
     setTheme(state, payload) {
       state.theme = payload
       // localStorage.theme = payload
+    },
+
+    setLoader(state, payload) {
+      state.loader = payload
     }
   },
 
   actions: {
     // 1. GET all "customers" data from Firebase´s Firestore DB by checking "user.email" to search is collection name
     getCustomers({commit, state}) {
+      commit('setLoader', true)
       const customers = []
       db.collection(state.user.email)
         .get() // all Documents of a Firestore DB Collection
@@ -107,7 +114,7 @@ export default new Vuex.Store({
             customer.id = document.id
             customers.push(customer)
           })
-
+          commit('setLoader', false)
           commit('setCustomers', customers)
         })
     },
