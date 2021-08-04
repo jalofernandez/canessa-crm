@@ -1,5 +1,5 @@
 <template>
-  <table class='w-full bg-white divide-y divide-gray-300 dark:divide-navy-700 overflow-hidden animate-pulse'>
+  <table class='w-full absolute z-0 bg-white divide-y divide-gray-300 dark:divide-navy-700 overflow-hidden animate-pulse'>
     <thead class="bg-gray-200 dark:bg-navy-700">
       <tr class=" bg-gray-200 text-gray-300 dark:bg-navy-700 dark:text-navy-500 uppercase text-sm leading-normal">
         <th class="px-3 py-2 text-left">ID</th>

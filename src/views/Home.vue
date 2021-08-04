@@ -22,7 +22,7 @@
       />
     </div>
 
-    <div class='overflow-x-auto w-full'>
+    <div :class="['w-full', 'relative', { 'overflow-x-auto' : !loader }]">
       <!-- <table class='w-full whitespace-nowrap bg-white divide-y divide-gray-300 dark:divide-navy-700 overflow-hidden'> -->
       <transition name="page-transition">
         <TableLoader v-if="loader" />
