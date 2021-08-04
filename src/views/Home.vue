@@ -1,11 +1,12 @@
 <template>
   <section class="container px-5 pt-5 pb-24 mx-auto relative">
 
-    <div class="sticky top-20 z-50 pb-2 flex justify-between items-center bg-opacity-75 bg-white dark:bg-navy-900 dark:text-white backdrop-filter backdrop-blur-sm">
+    <form @submit.prevent="setQuery(searchQuery)" class="sticky top-20 z-50 pb-2 flex justify-between items-center bg-opacity-75 bg-white dark:bg-navy-900 dark:text-white backdrop-filter backdrop-blur-sm">
       <input
         v-model.trim="searchQuery"
+        @keyup="setQuery(searchQuery)"
         type="text"
-        placeholder="Para buscar o filtrar..."
+        placeholder="Buscar clientes..."
         class="rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
       />
       <router-link
@@ -14,7 +15,7 @@
       >
         Añadir cliente
       </router-link>
-    </div>
+    </form>
 
     <div class="flex flex-col text-center w-full">
       <TheTitle
@@ -150,7 +151,7 @@
 import TheTitle from '@/components/TheTitle.vue'
 import TableLoader from '@/components/TableLoader.vue'
 
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Home',
@@ -169,38 +170,13 @@ export default {
   },
   computed: {
     ...mapState(['customers', 'loader']),
-    filteredCustomers() {
-      return this.customers.filter(client => {
-        const doggieName = client.name.toLowerCase();
-        const doggieBreed = client.breed;
-        // console.log(`${client.breed}`)
-        const doggieMood = client.mood.toLowerCase();
-        // const doggieOwner = this.getOwners(customer.owner);
-        const ownerName = client.owner.toLowerCase();
-        const ownerPhone = client.ownerPhone.toString();
-        const guardianName = client.guardian.toLowerCase();
-        const guardianPhone = client.guardianPhone.toString();
-        const doggieComs = client.comment.toLowerCase();
-
-        const searchTerm = this.searchQuery;
-
-        return doggieName.match(searchTerm) ||
-              //  doggieBreed.includes(searchTerm) ||
-               doggieBreed.match(searchTerm) ||
-               doggieMood.match(searchTerm) ||
-               // doggieOwner.includes(searchTerm) ||
-               ownerName.match(searchTerm) ||
-               ownerPhone.match(searchTerm) ||
-               guardianName.match(searchTerm) ||
-               guardianPhone.match(searchTerm) ||
-               doggieComs.match(searchTerm); // imp! "whatEverConst.includes(searchTerm)" works too!
-      });
-    },
+    ...mapGetters(['filteredCustomers'])
   },
   methods: {
     ...mapActions([
       'getCustomers',
-      'removeClient'
+      'removeClient',
+      'setQuery'
     ]),
     getColorMood(mood) {
       return (mood === 'simpatico' || mood === 'tranquilo') ? 'green'

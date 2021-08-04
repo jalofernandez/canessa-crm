@@ -55,6 +55,8 @@ export default new Vuex.Store({
     theme: 'light', // color theme by default
 
     loader: false, // page or sections loader spinner whatever
+
+    searchQuery: '', // to filter "clients" from data table
   },
 
   mutations: {
@@ -203,6 +205,12 @@ export default new Vuex.Store({
         })
     },
 
+    // 6. SEARCH "customers" (clients) into printed data table
+    setQuery({commit, state}, searchQuery) {
+      console.log(`🔍 Filtro: "${searchQuery}"`)
+      state.searchQuery = searchQuery.toLowerCase()
+    },
+
     /* -- "Users" Data -- */
 
     // a. SET new "user" in Firebase´s Auth DB
@@ -312,6 +320,33 @@ export default new Vuex.Store({
     //     return true
     //   }
     // }
+    filteredCustomers(state) {
+      return state.customers.filter(client => {
+        const doggieName = client.name.toLowerCase();
+        const doggieBreed = client.breed;
+        // console.log(`${client.breed}`)
+        const doggieMood = client.mood.toLowerCase();
+        // const doggieOwner = this.getOwners(customer.owner);
+        const ownerName = client.owner.toLowerCase();
+        const ownerPhone = client.ownerPhone.toString();
+        const guardianName = client.guardian.toLowerCase();
+        const guardianPhone = client.guardianPhone.toString();
+        const doggieComs = client.comment.toLowerCase();
+
+        const searchTerm = state.searchQuery;
+
+        return doggieName.match(searchTerm) ||
+              //  doggieBreed.includes(searchTerm) ||
+               doggieBreed.match(searchTerm) ||
+               doggieMood.match(searchTerm) ||
+               // doggieOwner.includes(searchTerm) ||
+               ownerName.match(searchTerm) ||
+               ownerPhone.match(searchTerm) ||
+               guardianName.match(searchTerm) ||
+               guardianPhone.match(searchTerm) ||
+               doggieComs.match(searchTerm); // imp! "whatEverConst.includes(searchTerm)" works too!
+      });
+    }
   },
 
   modules: {
