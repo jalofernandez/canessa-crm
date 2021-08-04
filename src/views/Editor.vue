@@ -6,12 +6,6 @@
       <TheTitle :title="`Editar cliente: <small class='text-brand-300'>${client.name}</small>`"/>
     </div>
 
-    <!-- <div class="flex flex-col text-center w-full">
-      <code class="lg:w-3/4 md:w-full mx-auto pt-3 text-sm">
-        <em>{{ client.name }}</em> - <span v-if="client.breed" class="text-xs">{{ id }}</span> - un/a <span>{{ client.breed }}</span> de <b>{{ client.owner }}</b>
-      </code>
-    </div> -->
-
     <form @submit.prevent="editClient(client)" class="lg:w-3/4 md:w-full mx-auto pt-3">
       <div class="flex flex-wrap -m-2">
 

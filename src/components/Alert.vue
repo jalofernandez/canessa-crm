@@ -1,6 +1,5 @@
 <template>
   <p class="mb-8 text-red-500 font-semibold">
-    <!-- ✋ &nbsp;{{ err.code }} | {{ err.message }} -->
     ✋ &nbsp;{{ getErrorMessage(err.code) }}
   </p>
 </template>

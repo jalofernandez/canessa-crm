@@ -8,12 +8,8 @@
 </template>
 
 <script>
-// import LogoImage from '@/assets/logo.svg?inline'
-// import LogoImage from '@/assets/logo.png'
-
 export default {
-  name: 'TheBrand',
-  // components: { LogoImage },
+  name: 'TheBrand'
 }
 </script>
 

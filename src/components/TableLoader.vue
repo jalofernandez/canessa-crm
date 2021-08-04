@@ -18,7 +18,7 @@
         <!-- Client ID -->
         <td class="px-3 py-2">
           <p class="text-green-200 dark:text-green-700 text-sm font-semibold tracking-wide">
-            100
+            0
           </p>
         </td>
 
@@ -46,15 +46,7 @@
 
         <!-- Doggie Mood -->
         <td class="px-3 py-2 text-center">
-          <!-- <span
-            v-if="client.mood"
-            class="py-0.5 px-2 rounded-full text-xs"
-            :class="`bg-${getColorMood(client.mood)}-200 text-${getColorMood(client.mood)}-700`"
-          >
-            {{ client.mood }} -->
-          <span
-            class="py-0.5 px-2 rounded-full bg-green-200 text-green-700 text-xs"
-          >
+          <span class="py-0.5 px-2 rounded-full bg-green-200 text-green-700 text-xs">
             Simpático
           </span>
         </td>
@@ -67,12 +59,6 @@
           <p class="text-gray-200 dark:text-navy-700 text-xs font-semibold tracking-wide">
             698765432
           </p>
-          <!-- <p class="mt-1 text-gray-200 dark:text-navy-700">
-            Joan Doe
-          </p>
-          <p class="text-gray-200 dark:text-navy-700 text-xs font-semibold tracking-wide">
-            612345678
-          </p> -->
         </td>
 
         <!-- Number of Dates -->
@@ -92,16 +78,12 @@
         <!-- Actions -->
         <td class="w-24 px-3 py-2 text-right">
           <p>
-            <button
-              class="w-20 border-0 py-1 px-3 rounded text-blue-200 bg-blue-300 focus:outline-none text-xs tracking-wide"
-            >
+            <button class="w-20 block border-0 rounded py-1 px-3 bg-blue-500 hover:bg-blue-600 focus:outline-none text-white hover:underline text-xs text-center tracking-wide">
               Editar
             </button>
           </p>
           <p class="mt-1">
-            <button
-              class="w-20 h-6 border-0 py-1 px-3 rounded text-red-200 bg-red-300 focus:outline-none text-xs tracking-wide"
-            >
+            <button class="w-20 h-6 border-0 rounded py-1 px-3 bg-red-50 hover:bg-red-100 focus:outline-none text-red-500 hover:text-red-600 hover:underline text-xs tracking-wide">
               Eliminar
             </button>
           </p>

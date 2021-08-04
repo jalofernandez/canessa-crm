@@ -1,13 +1,10 @@
 <template>
-  <!-- <section class="container px-5 pt-5 pb-24 mx-auto relative flex sm:flex-nowrap flex-wrap text-gray-600 body-font"> -->
   <section class="flex flex-col md:flex-row h-screen items-center text-gray-600 body-font">
 
-    <div
-      class="bg-white hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen"
-    >
+    <div class="bg-white hidden lg:block w-full md:w-1/2 xl:w-2/3 h-screen">
       <img
         src="https://source.unsplash.com/1600x900/?Dogs,Cats,Puppy,Puppies"
-        alt=""
+        alt="Perretes y gaticos ofrecidos por Unsplash random images"
         class="w-full h-full object-cover"
       />
     </div>
@@ -17,7 +14,11 @@
     >
       <!-- LOGIN -->
       <transition name="page-transition" appear>
-        <form v-if="isLogin" @submit.prevent="loginUser({email: user.email, password: user.pass})" class="w-full h-100 absolute z-10">
+        <form
+          v-if="isLogin"
+          @submit.prevent="loginUser({email: user.email, password: user.pass})"
+          class="w-full h-100 absolute z-10"
+        >
           <div class="flex justify-between items-center">
             <TheBrand />
             <ThemeSwitch />
@@ -33,7 +34,7 @@
               id="userEmail"
               name="userEmail"
               placeholder="E.j. rickunpalmo@gmail.com"
-              class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
+              class="w-full rounded border-2 border-gray-200 focus:border-brand-100 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
           </div>
           <div class="relative my-4">
@@ -84,7 +85,11 @@
 
       <!-- REGISTER -->
       <transition name="page-transition" appear>
-        <form v-if="!isLogin" @submit.prevent="createUser({email: user.email, password: user.pass})" class="w-full h-100 absolute z-0">
+        <form
+          v-if="!isLogin"
+          @submit.prevent="createUser({email: user.email, password: user.pass})"
+          class="w-full h-100 absolute z-0"
+        >
           <div class="flex justify-between items-center">
             <TheBrand />
             <ThemeSwitch />
@@ -203,15 +208,11 @@ export default {
   methods: {
     ...mapActions([
       'createUser',
-      'loginUser']
-    ),
+      'loginUser'
+    ]),
     toggleLogin() {
       this.isLogin = !this.isLogin
     }
   }
 }
 </script>
-
-<style>
-
-</style>
