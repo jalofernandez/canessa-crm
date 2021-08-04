@@ -162,6 +162,7 @@ export default new Vuex.Store({
 
     // 4. ADD new single "customer" (client) data into Firebase´s Firestore DB by checking "user.email" to search is collection name
     addClient({commit, state}, addedClient) {
+      commit('setLoader', true)
       db.collection(state.user.email)
         .add({
           name: addedClient.name,
@@ -179,6 +180,7 @@ export default new Vuex.Store({
             Nuevo cliente "${doc.name}"
             ---- ✨ ----
           `)
+          commit('setLoader', false)
           router.push('/')
         })
     },

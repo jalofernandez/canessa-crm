@@ -204,6 +204,7 @@
         <!-- Submit btn -->
         <div class="p-3 w-full">
           <button
+            :class="[{'opacity-50 cursor-text pointer-events-none': loader || disabled}]"
             type="submit"
             class="flex mx-auto border-0 rounded py-2 px-8 bg-brand-500 focus:outline-none hover:bg-brand-600 text-white text-lg tracking-wide"
           >
@@ -218,7 +219,7 @@
 
 <script>
 import TheTitle from '@/components/TheTitle.vue'
-import { mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'Add',
@@ -237,6 +238,13 @@ export default {
         guardianPhone: '',
         comment: ''
       }
+    }
+  },
+  computed: {
+    ...mapState(['loader']),
+    disabled() {
+      if (!this.client.name) return true
+      else return false
     }
   },
   methods: {
