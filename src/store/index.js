@@ -241,8 +241,8 @@ export default new Vuex.Store({
           })
           .catch(err => {
             console.log(`
-              Error usuario: "${err}"
-              ---- 🔥 ----
+              Error registro usuario: "${err.code}"
+              -------- 🔥 -----------
             `)
             commit('setError', err)
           })
@@ -262,8 +262,8 @@ export default new Vuex.Store({
           })
           .catch(err => {
             console.log(`
-              Error usuario: "${err}"
-              ---- 🔥 ----
+              Error login usuario: "${err.code}"
+              ------- 🔥 ---------
             `)
             commit('setError', err)
           })

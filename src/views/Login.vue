@@ -48,12 +48,13 @@
               placeholder="E.j. huyK3Chung@!"
               class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white focus:ring-2 focus:ring-brand-100 dark:bg-navy-700 dark:focus:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
+            <p :class="[{ 'text-green-500': user.pass.length >= this.passLength }]" class="mt-1 pl-3 text-xs font-light text-gray-500 dark:text-sky-300">
+              <em>La contraseña debe tener al menos <b>{{ passLength }}</b> caracteres.</em>
+              <span v-if="user.pass.length >= this.passLength">&nbsp;👌</span>
+            </p>
           </div>
           <div class="relative mt-8">
-            <!-- Error messages here -->
-            <p v-if="error" class="mb-8 text-red-500 font-semibold">
-              {{ error.message }}
-            </p>
+            <Alert v-if="error" :err="error" />
             <p class="mb-8 text-xs font-light text-gray-500 dark:text-sky-300">
               * <em>Hay que rellenar estos campos obligatoriamente con un usuario existente o sino de entrar a la plataforma "nanai de la chaina" (vamos, que el botón permanecerá bloqueado).</em>
             </p>
@@ -128,12 +129,13 @@
               placeholder="E.j. huyK3Chung@!"
               class="w-full rounded border-2 border-gray-200 focus:border-brand-500 dark:border-navy-500 outline-none py-1 px-3 bg-gray-100 focus:bg-white dark:bg-navy-700 dark:focus:bg-navy-500 dark:active:bg-navy-500 bg-opacity-50 dark:placeholder-navy-300 dark:focus:placeholder-navy-500 text-base text-gray-800 dark:text-white leading-8 tracking-wide transition-colors duration-200 ease-in-out"
             >
+            <p :class="[{ 'text-green-500': user.pass.length >= this.passLength }]" class="mt-1 pl-3 text-xs font-light text-gray-500 dark:text-sky-300">
+              <em>La contraseña debe tener al menos <b>{{ passLength }}</b> caracteres.</em>
+              <span v-if="user.pass.length >= this.passLength">&nbsp;👌</span>
+            </p>
           </div>
           <div class="relative mt-8">
-            <!-- Error messages here -->
-            <p v-if="error" class="mb-8 text-red-500 font-semibold">
-              {{ error.message }}
-            </p>
+            <Alert v-if="error" :err="error" />
             <p class="mb-8 text-xs font-light text-gray-500 dark:text-sky-300">
               * <em>Tienes que rellenar estos campos obligatoriamente o sino de entrar a la plataforma "nanai de la chaina" (vamos, que el botón permanecerá bloqueado).</em>
             </p>
@@ -167,6 +169,7 @@
 import TheBrand from '@/components/TheBrand.vue'
 import TheTitle from '@/components/TheTitle.vue'
 import ThemeSwitch from '@/components/ThemeSwitch.vue'
+import Alert from '@/components/Alert.vue'
 
 import { mapState, mapActions } from 'vuex'
  
@@ -175,7 +178,8 @@ export default {
   components: {
     TheBrand,
     TheTitle,
-    ThemeSwitch
+    ThemeSwitch,
+    Alert
   },
   data() {
     return {
